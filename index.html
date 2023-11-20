@@ -743,23 +743,22 @@
 
             <div class="card-content">
 
-              <h2 class="h2 section-title">Make Appointment</h2>
+              <h2 class="h2 section-title">Agendar Cita</h2>
+             <br>
+             <br>
 
-              <p class="section-text">
-                Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua
-                suspendisse
-              </p>
+             
 
               <form action="" class="appoin-form">
 
                 <div class="input-wrapper">
-                  <input type="text" name="name" placeholder="Your Full Name" required class="input-field">
+                  <input type="text" name="name" placeholder="Nombre Completo" required class="input-field">
 
-                  <input type="email" name="email_address" placeholder="Email Address" required class="input-field">
+                  <input type="email" name="email_address" placeholder="Ingrese su correo" required class="input-field">
                 </div>
 
                 <div class="input-wrapper">
-                  <input type="text" name="phone" placeholder="Phone Number" required class="input-field">
+                  <input type="text" name="phone" placeholder="Numero de telefono" required class="input-field">
 
                   <select name="category" class="input-field">
 
@@ -772,10 +771,14 @@
                   </select>
                 </div>
 
+                
+
+                <input type="date" name="date" required class="input-field date">
+
                 <!--Hora de la cita-->
 
                 <div class="input-wrapper">
-                  <input type="text" name="phone" placeholder="Phone Number" required class="input-field">
+                  
 
                   <select name="category" class="input-field">
 
@@ -802,8 +805,6 @@
                 </div>
 
                 <!--Hasta Aquí-->
-
-                <input type="date" name="date" required class="input-field date">
 
                 <textarea name="message" placeholder="Write Message" required class="input-field"></textarea>
 
