@@ -327,7 +327,7 @@
   }
   
   .logo {
-    color: var(--indian-yellow);
+    color: var(--white_50);
     font-family: var(--ff-oswald);
     font-size: 2.7rem;
     font-weight: var(--fw-600);
@@ -338,10 +338,10 @@
   .logo .span {
     color: var(--white);
     font-family: var(--ff-rubik);
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     font-weight: var(--fw-300);
-    text-transform: capitalize;
-    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.4;
   }
   
   .nav-toggle-btn {
