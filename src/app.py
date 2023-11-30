@@ -4,11 +4,11 @@ from config.db import db, app, ma
 
 #model
 from model.clientes import Cliente
-
+from model.servicios import servicios
 
 #rutas
 from rutas.Clientes import routes_Cliente
-
+from rutas.servicios import routes_servicios
 
 
 
