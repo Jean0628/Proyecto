@@ -2,27 +2,48 @@ from flask import Blueprint, request, jsonify, json
 from config.db import db, app, ma
 from flask import Flask,  redirect, request, jsonify, json, session, render_template
 from model.clientes import Cliente
-
+from model.agendas import agenda
 
 
 routes_Cliente = Blueprint("routes_Cliente", __name__)
 
 
-
-
-
 @routes_Cliente.route('/Guardar_Clientes', methods=['POST'])
 def Guardar_Clientes():
-    tipoPersona = request.form['tipoPersona']
-    NombreC = request.form['NombreC']
-    Email = request.form['Email']
+    name = request.json['fullname']
+    correo = request.json['fullcorreo']
+    phone = request.json['fullphone']
+    print(name, correo,phone)
     
-    telefono = request.form['telefono']
-    
-    if tipoPersona == 'PersonaNormal':
-        new_cli = Cliente(NombreC, Email, telefono, )
-        db.session.add(new_cli)
-        db.session.commit()
+    new_cli = Cliente(name, correo,phone)
+    db.session.add(new_cli)
+    db.session.commit()
   
-    return "si"
+    cliente_data = {
+        'id': new_cli.id,
+        'nombre': new_cli.NombreC,
+        'correo': new_cli.Email,
+        'phone': new_cli.telefono,
+    }
+
+    # Return a JSON response
+    return jsonify(cliente_data), 201
+
+@app.route('/Guardar_Citas', methods=['POST'])
+def Guardar_Citas():
+
+  clienteId = request.json['clienteId']
+  category = request.json['fullcategory']
+  fechaInput = request.json['fullfechaInput']
+  horaSelect = request.json['fullhoraSelect']
+  message = request.json['fullmessage']
+#   print(clienteId, category, fechaInput, horaSelect, message)
+
+  
+
+  new_cita = agenda(clienteId,category,fechaInput, horaSelect,message)
+  db.session.add(new_cita)
+  db.session.commit()
+
+  return 'terminado'
     

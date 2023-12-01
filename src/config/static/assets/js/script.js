@@ -159,8 +159,4 @@ function seleccionarYQuitarHora() {
   }
 }
 
-
-
-
-
 //base de datos

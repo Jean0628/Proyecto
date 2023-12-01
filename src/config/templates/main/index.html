@@ -12,7 +12,7 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Barber - Barbers & Hair Cutting</title>
+  <title>Salon de Belleza & SPA</title>
   <meta name="title" content="Barber - Barbers & Hair Cutting">
   <meta name="description" content="This is a barber html template made by codewithsadee">
 
@@ -20,6 +20,8 @@
     - favicon
   -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  
+ 
 
   <!-- 
     - custom css link
@@ -43,8 +45,9 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
-  <img src="{{url_for('static', filename='assets/images/Gorra.jpg')}}" alt="">
+ <!-- <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">-->
+ 
+
 
 </head>
 
@@ -168,6 +171,7 @@
 
       <section class="section hero has-before has-bg-image" id="home" aria-label="home"
         style="background-image: url('./assets/images/hero-banner.jpg')">
+        
         <div class="container">
 
           <h1 class="h1 hero-title">Barbers & Hair Cutting</h1>
@@ -618,9 +622,9 @@
               <form action="" class="appoin-form" id="citaForm">
 
                 <div class="input-wrapper">
-                  <input type="text" name="name" placeholder="Nombre Completo" required class="input-field">
+                  <input type="text" name="name" id="name" placeholder="Nombre Completo" required class="input-field">
             
-                  <input type="email" name="email_address" placeholder="Ingrese su correo" required class="input-field">
+                  <input type="email" name="email_address" id="email_address"placeholder="Ingrese su correo" required class="input-field">
                 </div>
 
                 <!-- <div class="input-wrapper">
@@ -633,9 +637,9 @@
     </div> -->
             
                 <div class="input-wrapper">
-                  <input type="text" name="phone" placeholder="Numero de telefono" required class="input-field">
+                  <input type="text" name="phone" id="phone" placeholder="Numero de telefono" required class="input-field">
             
-                  <select name="category" class="input-field">
+                  <select name="category" id="category" class="input-field">
                     <option value="Select category">Selecciona la categoria</option>
                     <option value="Beauty & spa">Beauty & spa</option>
                     <option value="Body massage">Body massage</option>
@@ -667,9 +671,9 @@
     </div>
     <!-- Hasta aquí -->
 
-    <textarea name="message" placeholder="Write Message" required class="input-field"></textarea>
+    <textarea name="message" id="message" placeholder="Write Message" required class="input-field"></textarea>
 
-    <button type="button" class="form-btn" onclick="seleccionarYQuitarHora()">
+    <button type="button" class="form-btn" onclick="guardar(),seleccionarYQuitarHora()">
       <span class="span">Appointment Now</span>
       <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
     </button>
@@ -832,18 +836,17 @@
 
 
 
-
-
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js" defer></script>
-
+  <script src="../../static/assets/js/script.js"></script>
+  <script src="../../static/assets/js/registro.js"></script>
   <!-- 
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 

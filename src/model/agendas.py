@@ -8,7 +8,7 @@ class agenda(db.Model):
     id_cli = db.Column(db.Integer,db.ForeignKey('tblClientess.id'))
     id_servi = db.Column(db.Integer,db.ForeignKey('tblServicios_Dispo.id'))
     fecha = db.Column(db.Date)
-    hora = db.Column(db.Integer)
+    hora = db.Column(db.String(50))
     observaciones = db.Column(db.String(1000))
    
 
