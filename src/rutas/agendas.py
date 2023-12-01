@@ -1,32 +1,28 @@
 from flask import Blueprint, request, jsonify, json
 from config.db import db, app, ma
 from flask import Flask,  redirect, request, jsonify, json, session, render_template
-from model.agendas import agendas
+from model.agendas import agenda
 
 
 
-routes_Cliente = Blueprint("routes_agendas", __name__)
+routes_agendas = Blueprint("routes_agendas", __name__)
 
 
 
 
 
-@routes_Cliente.route('/Guardar_agendas', methods=['POST'])
-def Guardar_Clientes():
+@routes_agendas.route('/Guardar_agendas', methods=['POST'])
+def Guardar_agendas():
     tipoPersona = request.form['tipoPersona']
-    NombreC = request.form['NombreC']
-    Email = request.form['Email']
-    
-    telefono = request.form['telefono']
+    fecha = request.form['fecha']
+    hora = request.form['hora']
+    observaciones  = request.form['observaciones']
     
     if tipoPersona == 'PersonaNormal':
-        new_cli = Clientes(NombreC, Email, telefono, )
-        db.session.add(new_cli)
+        new_age = agenda(fecha, hora, observaciones )
+        db.session.add(new_age)
         db.session.commit()
-    elif tipoPersona == 'Repartidor':
-        new_rep = Repartidor(NombreC, Email, telefono)
-        db.session.add(new_rep)
-        db.session.commit()
+    
         
     return "si"
     

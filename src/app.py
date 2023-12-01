@@ -5,10 +5,12 @@ from config.db import db, app, ma
 #model
 from model.clientes import Cliente
 from model.servicios import servicios
+from model.agendas import agenda
 
 #rutas
 from rutas.Clientes import routes_Cliente
 from rutas.servicios import routes_servicios
+from rutas.agendas import routes_agendas
 
 
 
@@ -25,3 +27,9 @@ def index():
 if __name__ == '__main__':
    # load_dotenv()
     app.run(debug=True, port=5000, host='0.0.0.0')
+    
+    
+    
+    #Aqui guardar datos
+    
+    

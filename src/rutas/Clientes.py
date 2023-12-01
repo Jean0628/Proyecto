@@ -20,13 +20,9 @@ def Guardar_Clientes():
     telefono = request.form['telefono']
     
     if tipoPersona == 'PersonaNormal':
-        new_cli = Clientes(NombreC, Email, telefono, )
+        new_cli = Cliente(NombreC, Email, telefono, )
         db.session.add(new_cli)
         db.session.commit()
-    elif tipoPersona == 'Repartidor':
-        new_rep = Repartidor(NombreC, Email, telefono)
-        db.session.add(new_rep)
-        db.session.commit()
-        
+  
     return "si"
     

@@ -12,14 +12,14 @@ routes_servicios = Blueprint("routes_servicio", __name__)
 
 
 @routes_servicios.route('/Guardar_servicio', methods=['POST'])
-def Guardar_Clientes():
+def Guardar_servicios():
     tipoPersona = request.form['tipoPersona']
     servicio_dis = request.form['servicio_dis']
     
     
     if tipoPersona == 'PersonaNormal':
-        new_cli = Clientes(servicio_dis )
-        db.session.add(new_cli)
+        new_servi = servicios(servicio_dis )
+        db.session.add(new_servi)
         db.session.commit()
     
         
