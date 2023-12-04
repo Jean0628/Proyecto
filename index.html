@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/flaticon.min.css')}}">
 
   <!-- 
     - primary meta tags
@@ -35,12 +37,12 @@
   <!-- 
     - flaticon
   -->
-  <link rel="stylesheet" href="assets/css/flaticon.min.css">
+  <link rel="stylesheet" href="src/config/static/assets/css/flaticon.min.css">
 
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
+  <link rel="preload" as="image" href="src/config/static/assets/images/">
 
 </head>
 
@@ -112,7 +114,7 @@
       <div class="container">
 
         <a href="#" class="logo">
-          Salón de Belleza
+          Barberia
           <br> Spa
           
 
@@ -163,7 +165,7 @@
       -->
 
       <section class="section hero has-before has-bg-image" id="home" aria-label="home"
-        style="background-image: url('./assets/images/hero-banner.jpg')">
+        style="background-image: url('src/config/static/assets/images/hero-banner.jpg')">
         <div class="container">
 
           <h1 class="h1 hero-title">SCHEDULE 
@@ -348,7 +350,7 @@
       -->
 
       <section class="section pricing has-bg-image has-before" id="pricing" aria-label="pricing"
-        style="background-image: url('./assets/images/pricing-bg.jpg')">
+        style="background-image: url('src/config/static/assets/images/pricing-bg.jpg')">
         <div class="container">
 
           <h2 class="h2 section-title text-center">IMPRESIONANTE PLAN DE PRECIOS</h2>
@@ -428,7 +430,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-1.jpg" width="90" height="90" alt="Hair Cutting & Fitting"
+                    <img src="src/config/static/assets/images/pricing-1.jpg" width="90" height="90" alt="Hair Cutting & Fitting"
                       class="img-cover">
                   </figure>
 
@@ -447,7 +449,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-2.jpg" width="90" height="90" alt="Shaving & Facial"
+                    <img src="src/config/static/assets/images/pricing-2.jpg" width="90" height="90" alt="Shaving & Facial"
                       class="img-cover">
                   </figure>
 
@@ -466,7 +468,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-3.jpg" width="90" height="90" alt="Hair Color & Wash"
+                    <img src="src/config/static/assets/images/pricing-3.jpg" width="90" height="90" alt="Hair Color & Wash"
                       class="img-cover">
                   </figure>
 
@@ -485,7 +487,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-4.jpg" width="90" height="90" alt="Body Massage"
+                    <img src="src/config/static/assets/images/pricing-4.jpg" width="90" height="90" alt="Body Massage"
                       class="img-cover">
                   </figure>
 
@@ -504,7 +506,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-5.jpg" width="90" height="90" alt="Beauty & Spa"
+                    <img src="src/config/static/assets/images/pricing-5.jpg" width="90" height="90" alt="Beauty & Spa"
                       class="img-cover">
                   </figure>
 
@@ -523,7 +525,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-6.jpg" width="90" height="90" alt="Facial & Face Wash"
+                    <img src="src/config/static/assets/images/pricing-6.jpg" width="90" height="90" alt="Facial & Face Wash"
                       class="img-cover">
                   </figure>
 
@@ -542,7 +544,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-7.jpg" width="90" height="90" alt="Backbone Massage"
+                    <img src="src/config/static/assets/images/pricing-7.jpg" width="90" height="90" alt="Backbone Massage"
                       class="img-cover">
                   </figure>
 
@@ -561,7 +563,7 @@
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="./assets/images/pricing-8.jpg" width="90" height="90" alt="Meditation & Massage"
+                    <img src="src/config/static/assets/images/pricing-8.jpg" width="90" height="90" alt="Meditation & Massage"
                       class="img-cover">
                   </figure>
 
@@ -600,7 +602,7 @@
           <div class="appoin-card">
 
             <figure class="card-banner img-holder" style="--width: 250; --height: 774;">
-              <img src="./assets/images/appoin-banner-1.jpg" width="250" height="774" loading="lazy" alt=""
+              <img src="src/config/static/assets/images/appoin-banner-1.jpg" width="250" height="774" loading="lazy" alt=""
                 class="img-cover">
             </figure>
 
@@ -674,7 +676,7 @@
             </div>
 
             <figure class="card-banner img-holder" style="--width: 250; --height: 774;">
-              <img src="./assets/images/appoin-banner-2.jpg" width="250" height="774" loading="lazy" alt=""
+              <img src="src/config/static/assets/images/appoin-banner-2.jpg" width="250" height="774" loading="lazy" alt=""
                 class="img-cover">
             </figure>
 
@@ -694,7 +696,7 @@
     - #FOOTER
   -->
 
-  <footer class="footer has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+  <footer class="footer has-bg-image" style="background-image: url('src/config/static/assets/images/footer-bg.png')">
     <div class="container">
 
       <div class="footer-top">
@@ -802,7 +804,7 @@
 
           <ul class="footer-list">
             <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-              <img src="./assets/images/LOGO.png" width="90" height="90" alt="Shaving & Facial"
+              <img src="src/config/static/assets/images/LOGO.png" width="90" height="90" alt="Shaving & Facial"
                 class="img-cover">
             </figure>
 
@@ -834,7 +836,7 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js" defer></script>
+  <script src="src/config/static/assets/js/script.js" defer></script>
 
   <!-- 
     - ionicon link
