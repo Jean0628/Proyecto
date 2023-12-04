@@ -36,14 +36,16 @@ function guardar() {
         message = document.getElementById('message');
   
         axios.post('/Guardar_Citas', {
-          clienteId: clienteId,
+          data:{
+          clienteId: response.data.id,
           fullcategory: category.value,
           fullfechaInput: fechaInput.value,
           fullhoraSelect: horaSelect.value,
           fullmessage: message.value,
-          fullname: nombre.value,
+          }
         })
           .then(response => {
+            alert(data['category'])
             console.log('Cita guardada para el cliente con ID:', clienteId);
             console.log('datos cita guardados exitosamente');
           })
@@ -55,6 +57,8 @@ function guardar() {
         console.log(error);
       });
   }
+
+
   
   
 //   function cita() {

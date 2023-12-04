@@ -32,18 +32,21 @@ def Guardar_Clientes():
 @app.route('/Guardar_Citas', methods=['POST'])
 def Guardar_Citas():
 
-  clienteId = request.json['clienteId']
-  category = request.json['fullcategory']
-  fechaInput = request.json['fullfechaInput']
-  horaSelect = request.json['fullhoraSelect']
-  message = request.json['fullmessage']
-#   print(clienteId, category, fechaInput, horaSelect, message)
+  clienteId = request.json['data']['clienteId']
+  clienteId = request.json['data']['clienteId']
+  fechaInput = request.json['data']['fullfechaInput']
+  horaSelect = request.json['data']['fullhoraSelect']
+  message = request.json['data']['fullmessage']
+  
+  print(clienteId,fechaInput,horaSelect,message)
+  
+
 
   
 
-  new_cita = agenda(clienteId,category,fechaInput, horaSelect,message)
-  db.session.add(new_cita)
-  db.session.commit()
+  # new_cita = agenda(clienteId,fechaInput, horaSelect,message)
+  # db.session.add(new_cita)
+  # db.session.commit()
 
   return 'terminado'
     

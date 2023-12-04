@@ -12,10 +12,12 @@ class agenda(db.Model):
     observaciones = db.Column(db.String(1000))
    
 
-    def __init__(self, fecha, hora,  observaciones):
+    def __init__(self, fecha, hora, observaciones , id_servi):
         self.fecha = fecha
         self.hora = hora
         self.observaciones = observaciones
+        self.id_servi = id_servi
+        
 
 
 
