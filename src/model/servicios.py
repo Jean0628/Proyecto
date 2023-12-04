@@ -16,19 +16,18 @@ class servicios(db.Model):
 
 
 with app.app_context():
-    # db.create_rall()
+    db.create_all()
 
-    new_citas = [
-        servicios("Beauty & Spa"),
-        servicios("Body Massage"),
-        servicios("Shaving & Facial"),
-        servicios("Hair Color"),
-    ]
-
-    # Add all instances to the database session
-    db.session.add_all(new_citas)
-
-    # Commit the changes to persist the data
-    db.session.commit()
-
-    print("4 servicios guardados!")
+    if not db.session.query(servicios).count():
+        new_servicio = [
+            servicios("Corte de Cabello"),
+            servicios("Corte de Cabello Infantil"),
+            servicios("Afeitado de barba"),
+            servicios("Peinado"),
+            servicios("Depilacion de Cejas"),
+        ]
+        db.session.add_all(new_servicio)
+        db.session.commit()
+        print("4 servicios guardados!")
+    else:
+        print("Los servicios ya existen en la base de datos.")
