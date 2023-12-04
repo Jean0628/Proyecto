@@ -228,7 +228,7 @@
                     <i class="flaticon-spa" aria-hidden="true"></i>
                   </div>
 
-                  <p class="btn-text">Lavado de cara</p>
+                  <p class="btn-text">Lavado Facial</p>
                 </button>
               </li>
 
@@ -443,45 +443,54 @@
 
                   <select name="category" id="category" class="input-field">
                     <option>Selecciona la categoria</option>
-                    <option value="1">Beauty & spa</option>
-                    <option value="2">Body massage</option>
-                    <option value="3">Shaving & Facial</option>
-                    <option value="4">Hair Color</option>
+                    <option value="1">Corte de Cabello</option>
+                    <option value="2">Lavado Facial</option>
+                    <option value="3">Afeitado</option>
                   </select>
                 </div>
+
+                <!-- Barbero -->
+                <select name="barbero" id="barbero" class="input-field" onchange="actualizarHorasDisponibles()">
+                  <option>Selecciona Barbero</option>
+                  <option value="1">Juan Pablo Anaya</option>
+                  <option value="2">Marcos Palacios</option>
+                  <option value="3">Eduardo Padilla</option>
+                  <option value="4">Chris Villa</option>
+                </select>
+                <!-- Barbero -->
 
                 <input type="date" name="date" id="fechaInput" required class="input-field date"
                   onchange="actualizarHorasDisponibles()">
 
-               <!-- Hora de la cita -->
-    <div class="input-wrapper">
-      <select name="category" id="horaSelect" class="input-field">
-        <option value="Select category">Selecciona la hora</option>
-        <option value="8">8:00 AM</option>
-        <option value="9">9:00 AM</option>
-        <option value="10">10:00 AM</option>
-        <option value="11">11:00 AM</option>
-        <option value="12">12:00 PM</option>
-        <option value="13">1:00 PM</option>
-        <option value="14">2:00 PM</option>
-        <option value="15">3:00 PM</option>
-        <option value="16">4:00 PM</option>
-        <option value="17">5:00 PM</option>
-        <option value="18">6:00 PM</option>
-        <option value="19">7:00 PM</option>
-        <option value="20">8:00 PM</option>
-      </select>
-    </div>
-    <!-- Hasta aquí -->
+                <!-- Hora de la cita -->
+                <div class="input-wrapper">
+                  <select name="category" id="horaSelect" class="input-field">
+                    <option value="Select category">Selecciona la hora</option>
+                    <option value="8">8:00 AM</option>
+                    <option value="9">9:00 AM</option>
+                    <option value="10">10:00 AM</option>
+                    <option value="11">11:00 AM</option>
+                    <option value="12">12:00 PM</option>
+                    <option value="13">1:00 PM</option>
+                    <option value="14">2:00 PM</option>
+                    <option value="15">3:00 PM</option>
+                    <option value="16">4:00 PM</option>
+                    <option value="17">5:00 PM</option>
+                    <option value="18">6:00 PM</option>
+                    <option value="19">7:00 PM</option>
+                    <option value="20">8:00 PM</option>
+                  </select>
+                </div>
+                <!-- Hasta aquí -->
 
                 <textarea name="message" id="message" placeholder="Write Message" required
                   class="input-field"></textarea>
 
-    <button type="button" class="form-btn" onclick="guardar(),seleccionarYQuitarHora()">
-      <span class="span">Appointment Now</span>
-      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-    </button>
-  </form>
+                <button type="button" class="form-btn" onclick="guardar(),seleccionarYQuitarHora()">
+                  <span class="span">Appointment Now</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </form>
             </div>
 
             <figure class="card-banner img-holder" style="--width: 250; --height: 774;">

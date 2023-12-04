@@ -96,8 +96,33 @@ addEventOnElem(filterBtns, "click", filter);
 
 
 
-// Registro de horas seleccionadas para cada día
-var horasPorDia = {};
+// Registro de horas seleccionadas para cada día y barbero
+var horasPorBarberoYDia = {};
+
+// Función para actualizar las fechas disponibles según el barbero seleccionado
+function actualizarFechasDisponibles() {
+  var fechaInput = document.getElementById("fechaInput");
+  var barberoSelect = document.getElementById("barbero");
+
+  // Obtener el barbero seleccionado
+  var barberoSeleccionado = barberoSelect.value;
+
+  // Restaurar la lista completa de fechas disponibles para el barbero seleccionado
+  fechaInput.innerHTML = "";
+
+  // Agregar todas las fechas disponibles
+  var todasLasFechas = Object.keys(horasPorBarberoYDia[barberoSeleccionado] || {});
+
+  todasLasFechas.forEach(function (fecha) {
+    var option = document.createElement("option");
+    option.value = fecha;
+    option.text = fecha;
+    fechaInput.add(option);
+  });
+
+  // Llamar a la función para actualizar las horas después de seleccionar la fecha
+  actualizarHorasDisponibles();
+}
 
 // Función para actualizar las horas disponibles según el día seleccionado
 function actualizarHorasDisponibles() {
@@ -107,14 +132,18 @@ function actualizarHorasDisponibles() {
   // Obtener la fecha seleccionada
   var fechaSeleccionada = fechaInput.value;
 
-  // Restaurar la lista completa de horas disponibles para el día seleccionado
+  // Obtener el barbero seleccionado
+  var barberoSelect = document.getElementById("barbero");
+  var barberoSeleccionado = barberoSelect.value;
+
+  // Restaurar la lista completa de horas disponibles para el día seleccionado y barbero
   horaSelect.innerHTML = "<option value='Select category'>Selecciona la hora</option>";
 
   // Agregar todas las horas disponibles
   var todasLasHoras = ["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM"];
 
-  // Filtrar las horas ya seleccionadas para la fecha seleccionada
-  var horasSeleccionadas = horasPorDia[fechaSeleccionada] || [];
+  // Filtrar las horas ya seleccionadas para la fecha seleccionada y barbero
+  var horasSeleccionadas = horasPorBarberoYDia[barberoSeleccionado]?.[fechaSeleccionada] || [];
 
   todasLasHoras.forEach(function (hora) {
     if (!horasSeleccionadas.includes(hora)) {
@@ -132,15 +161,22 @@ function seleccionarYQuitarHora() {
   var horaSelect = document.getElementById("horaSelect");
   var horaSeleccionada = horaSelect.value;
   var fechaSeleccionada = fechaInput.value;
+  var barberoSelect = document.getElementById("barbero");
+  var barberoSeleccionado = barberoSelect.value;
 
   if (horaSeleccionada !== "Select category") {
     alert("Has seleccionado la hora: " + horaSeleccionada);
 
-    // Agregar la hora seleccionada al registro para la fecha seleccionada
-    if (!horasPorDia.hasOwnProperty(fechaSeleccionada)) {
-      horasPorDia[fechaSeleccionada] = [];
+    // Agregar la hora seleccionada al registro para el día y barbero seleccionados
+    if (!horasPorBarberoYDia.hasOwnProperty(barberoSeleccionado)) {
+      horasPorBarberoYDia[barberoSeleccionado] = {};
     }
-    horasPorDia[fechaSeleccionada].push(horaSeleccionada);
+
+    if (!horasPorBarberoYDia[barberoSeleccionado].hasOwnProperty(fechaSeleccionada)) {
+      horasPorBarberoYDia[barberoSeleccionado][fechaSeleccionada] = [];
+    }
+
+    horasPorBarberoYDia[barberoSeleccionado][fechaSeleccionada].push(horaSeleccionada);
 
     // Quitar la hora seleccionada del select
     horaSelect.remove(horaSelect.selectedIndex);
@@ -154,9 +190,8 @@ function seleccionarYQuitarHora() {
     // Limpiar los demás campos del formulario
     document.getElementById("citaForm").reset();
 
-    // Actualizar las horas disponibles después de la selección de la fecha
-    actualizarHorasDisponibles();
+    // Actualizar las fechas y horas disponibles después de la selección
+    actualizarFechasDisponibles();
   }
 }
 
-//base de datos
