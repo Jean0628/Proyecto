@@ -16,4 +16,19 @@ class servicios(db.Model):
 
 
 with app.app_context():
-    db.create_all()
+    # db.create_rall()
+
+    new_citas = [
+        servicios("Beauty & Spa"),
+        servicios("Body Massage"),
+        servicios("Shaving & Facial"),
+        servicios("Hair Color"),
+    ]
+
+    # Add all instances to the database session
+    db.session.add_all(new_citas)
+
+    # Commit the changes to persist the data
+    db.session.commit()
+
+    print("4 servicios guardados!")
