@@ -640,11 +640,11 @@
                   <input type="text" name="phone" id="phone" placeholder="Numero de telefono" required class="input-field">
             
                   <select name="category" id="category" class="input-field">
-                    <option value="Select category">Selecciona la categoria</option>
-                    <option value="Beauty & spa">Beauty & spa</option>
-                    <option value="Body massage">Body massage</option>
-                    <option value="Shaving & Facial">Shaving & Facial</option>
-                    <option value="Hair Color">Hair Color</option>
+                    <option>Selecciona la categoria</option>
+                    <option value="1">Beauty & spa</option>
+                    <option value="2">Body massage</option>
+                    <option value="3">Shaving & Facial</option>
+                    <option value="4">Hair Color</option>
                   </select>
                 </div>
             
@@ -653,7 +653,7 @@
                <!-- Hora de la cita -->
     <div class="input-wrapper">
       <select name="hora" id="horaSelect" class="input-field">
-        <option value="Select category">Selecciona la hora</option>
+        <option>Selecciona la hora</option>
         <option value="8">8:00 AM</option>
         <option value="9">9:00 AM</option>
         <option value="10">10:00 AM</option>
@@ -674,7 +674,7 @@
     <textarea name="message" id="message" placeholder="Write Message" required class="input-field"></textarea>
 
     <button type="button" class="form-btn" onclick="guardar(),seleccionarYQuitarHora()">
-      <span class="span">Appointment Now</span>
+      <span class="span">Cita ahora</span>
       <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
     </button>
   </form>

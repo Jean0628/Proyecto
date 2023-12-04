@@ -33,20 +33,16 @@ def Guardar_Clientes():
 def Guardar_Citas():
 
   clienteId = request.json['data']['clienteId']
-  clienteId = request.json['data']['clienteId']
+  category = request.json['data']['fullcategory']
   fechaInput = request.json['data']['fullfechaInput']
   horaSelect = request.json['data']['fullhoraSelect']
   message = request.json['data']['fullmessage']
   
   print(clienteId,fechaInput,horaSelect,message)
-  
 
-
-  
-
-  # new_cita = agenda(clienteId,fechaInput, horaSelect,message)
-  # db.session.add(new_cita)
-  # db.session.commit()
+  new_cita = agenda(clienteId,category,fechaInput, horaSelect, message)
+  db.session.add(new_cita)
+  db.session.commit()
 
   return 'terminado'
     
