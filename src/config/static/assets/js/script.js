@@ -165,7 +165,13 @@ function seleccionarYQuitarHora() {
   var barberoSeleccionado = barberoSelect.value;
 
   if (horaSeleccionada !== "Select category") {
-    alert("Has seleccionado la hora: " + horaSeleccionada);
+    // Utiliza Swal.fire en lugar de alertSwal.fire
+    Swal.fire({
+      title: 'Agendamiento Exitoso',
+      text: 'Espere nuestra llamada',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
 
     // Agregar la hora seleccionada al registro para el día y barbero seleccionados
     if (!horasPorBarberoYDia.hasOwnProperty(barberoSeleccionado)) {
@@ -194,4 +200,3 @@ function seleccionarYQuitarHora() {
     actualizarFechasDisponibles();
   }
 }
-
