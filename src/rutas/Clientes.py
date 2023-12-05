@@ -13,7 +13,11 @@ def Guardar_Clientes():
     name = request.json['fullname']
     correo = request.json['fullcorreo']
     phone = request.json['fullphone']
+
+
     print(name, correo,phone)
+
+
     
     new_cli = Cliente(name, correo,phone)
     db.session.add(new_cli)
@@ -34,13 +38,14 @@ def Guardar_Citas():
 
   clienteId = request.json['data']['clienteId']
   category = request.json['data']['fullcategory']
+  barbero = request.json['data']['fullbarbero']
   fechaInput = request.json['data']['fullfechaInput']
   horaSelect = request.json['data']['fullhoraSelect']
   message = request.json['data']['fullmessage']
   
   print(clienteId,fechaInput,horaSelect,message)
 
-  new_cita = agenda(clienteId,category,fechaInput, horaSelect, message)
+  new_cita = agenda(clienteId,category,barbero,fechaInput, horaSelect, message)
   db.session.add(new_cita)
   db.session.commit()
 

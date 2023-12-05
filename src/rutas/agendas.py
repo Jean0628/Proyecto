@@ -17,6 +17,8 @@ def Guardar_agendas():
     fecha = request.form['fecha']
     hora = request.form['hora']
     observaciones  = request.form['observaciones']
+
+ 
     
     if tipoPersona == 'PersonaNormal':
         new_age = agenda(fecha, hora, observaciones )
