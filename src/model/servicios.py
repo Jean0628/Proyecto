@@ -20,13 +20,17 @@ with app.app_context():
 
     if not db.session.query(servicios).count():
         new_servicio = [
-            servicios("Corte de Cabello"),
+            servicios("Corte de Cabello + Diseño"),
+            servicios("Corte sencillo "),
             servicios("Lavado Facial"),
             servicios("Afeitado"),
+            servicios("Afeitado de Cejas"),
+            
+            
            
         ]
         db.session.add_all(new_servicio)
         db.session.commit()
-        print("3 servicios guardados!")
+        print("5 servicios guardados!")
     else:
         print("Los servicios ya existen en la base de datos.")
