@@ -20,7 +20,7 @@ with app.app_context():
 
     if not db.session.query(barberos).count():
         new_barber = [
-            barberos("KevinGarcia "),
+            barberos("Kevin Garcia "),
             barberos("Andrew Smith "),
             barberos("Marcus Patiño"),
            
